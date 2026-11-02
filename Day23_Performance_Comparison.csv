@@ -1,0 +1,3 @@
+method,test_MAE,test_RMSE,median_batch_inference_ms_416_rows,p95_batch_inference_ms_416_rows,single_batch_inference_ms_416_rows,model_file_bytes,model_file_KB
+Frozen pH-only Linear Regression,1.4815340200912186,1.9004687789585786,1.0856345,2.9523458499999977,2.856995000001916,1227,1.1982421875
+Constant-mean baseline,1.4817181151393513,1.9015360591219053,0.0339055,0.20212694999999944,0.08625099962955574,655,0.6396484375

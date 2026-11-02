@@ -1,0 +1,57 @@
+{
+  "day": 23,
+  "frozen_pipeline": "Day22_Final_Linear_Regression_Pipeline.joblib",
+  "dataset": "water_potability_temporal_synthetic.csv",
+  "target": "next-row pH from current-row pH",
+  "split": {
+    "chronological_no_shuffle": true,
+    "train_rows": 1939,
+    "validation_rows": 416,
+    "test_rows": 416,
+    "test_is_latest_15_percent": true
+  },
+  "heldout_test_metrics": {
+    "linear_regression": {
+      "MAE": 1.4815340200912186,
+      "RMSE": 1.9004687789585786
+    },
+    "constant_mean_baseline": {
+      "MAE": 1.4817181151393513,
+      "RMSE": 1.9015360591219053
+    },
+    "linear_regression_MAE_improvement": 0.00018409504813265976,
+    "linear_regression_RMSE_improvement": 0.0010672801633266893,
+    "linear_regression_better_absolute_error_rows": 221,
+    "linear_regression_better_absolute_error_percent": 53.125
+  },
+  "runtime": {
+    "data_preparation_seconds_including_timestamp_parse_sort_target_split": 0.008115896999697725,
+    "linear_regression_single_batch_inference_ms_416_rows": 2.856995000001916,
+    "constant_mean_single_batch_inference_ms_416_rows": 0.08625099962955574,
+    "linear_regression_median_batch_inference_ms_416_rows_200_repeats": 1.0856345,
+    "linear_regression_p95_batch_inference_ms_416_rows_200_repeats": 2.9523458499999977,
+    "constant_mean_median_batch_inference_ms_416_rows_200_repeats": 0.0339055,
+    "constant_mean_p95_batch_inference_ms_416_rows_200_repeats": 0.20212694999999944,
+    "benchmark_repeats": 200,
+    "note": "Inference timings are machine- and environment-dependent; benchmarked on this runtime."
+  },
+  "model_size": {
+    "linear_regression_joblib_bytes": 1227,
+    "linear_regression_joblib_KB": 1.1982421875,
+    "constant_mean_joblib_bytes": 655,
+    "constant_mean_joblib_KB": 0.6396484375
+  },
+  "environment": {
+    "python": "3.13.5",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.8.0",
+    "joblib": "1.5.3"
+  },
+  "limitations": [
+    "Source timestamps are synthetic; original dataset is static.",
+    "The held-out test is a pseudo-temporal next-row pH task, not a real future underwater sensor stream.",
+    "No dissolved oxygen or pressure fields are present.",
+    "No labelled anomaly ground truth; this is forecasting validation, not anomaly validation.",
+    "Runtime measurements depend on this execution environment."
+  ]
+}
